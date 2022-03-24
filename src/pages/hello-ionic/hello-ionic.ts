@@ -7,7 +7,7 @@ import { MenuController } from 'ionic-angular';
 })
 export class HelloIonicPage {
   fetchInterval: any;
-  countSpam: number;
+  countSpam: number = 0;
 
 
   constructor(public menuCtrl: MenuController) {}
