@@ -14,10 +14,8 @@ export class HelloIonicPage {
 
   spamMenu(): void {
     this.fetchInterval = setInterval(async () => {
-      if (this.countSpam < 1000) {
-        console.log(`# of iterations without a crash: ${this.countSpam}`);
-        this.menuCtrl.isOpen() ? this.menuCtrl.close() : this.menuCtrl.open();
-      } else this.fetchInterval = undefined;
+      console.log(`# of iterations without a crash: ${this.countSpam}`);
+      this.menuCtrl.isOpen() ? this.menuCtrl.close() : this.menuCtrl.open();
       this.countSpam++;
     }, 100);
   }
