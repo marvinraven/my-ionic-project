@@ -7,18 +7,18 @@ import { MenuController } from 'ionic-angular';
 })
 export class HelloIonicPage {
   fetchInterval: any;
+  countSpam: number;
 
 
   constructor(public menuCtrl: MenuController) {}
 
   spamMenu(): void {
-    let countSpam = 0;
     this.fetchInterval = setInterval(async () => {
-      if (countSpam < 1000) {
-        console.log(`# of iterations without a crash: ${countSpam}`);
+      if (this.countSpam < 1000) {
+        console.log(`# of iterations without a crash: ${this.countSpam}`);
         this.menuCtrl.isOpen() ? this.menuCtrl.close() : this.menuCtrl.open();
       } else this.fetchInterval = undefined;
-      countSpam++;
+      this.countSpam++;
     }, 100);
   }
 }
