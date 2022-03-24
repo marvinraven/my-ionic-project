@@ -14,12 +14,11 @@ export class HelloIonicPage {
   spamMenu(): void {
     let countSpam = 0;
     this.fetchInterval = setInterval(async () => {
-      if (countSpam < 500) {
+      if (countSpam < 1000) {
+        console.log(`# of iterations without a crash: ${countSpam}`);
         this.menuCtrl.isOpen() ? this.menuCtrl.close() : this.menuCtrl.open();
-      } else {
-        this.fetchInterval = undefined;
-      }
+      } else this.fetchInterval = undefined;
       countSpam++;
-    }, 200);
+    }, 100);
   }
 }
